@@ -6,7 +6,7 @@ Bateria (?) eletrônica feita com arduino. No momento funcionando apenas com um 
 - [MIDILibrary](https://github.com/FortySevenEffects/arduino_midi_library)
 
 ## Esquema
-![Esquema no Fritzing](schematics/scheme.jpg)
+![Esquema no Fritzing](http://github.com/matehackers/tambores/schematics/scheme.jpg)
 
 ## Utilização
 1. Monte o circuito
