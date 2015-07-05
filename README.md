@@ -1,5 +1,5 @@
 # tambores
-Bateria (?) eletrônica feita com arduino.
+Bateria (?) eletrônica feita com arduino. No momento funcionando apenas com um pad.
 
 ## Dependências
 - [ttymidi](http://www.varal.org/ttymidi/)
