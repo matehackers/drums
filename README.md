@@ -18,7 +18,7 @@ Bateria (?) eletrônica feita com arduino. No momento funcionando apenas com um 
 5. Conecte o ttymidi ao FluidSynth. Para esta etapa recomendamos o [QJackCtl](http://qjackctl.sourceforge.net/)
 
 ## Próximos passos
-- Ampliar o número de peças utilizadas
+- Ampliar o número de pads
 - Identificar toques simultâneos
 - Sensibilidade: identificar diferentes níveis de batida
 - Construir pads
