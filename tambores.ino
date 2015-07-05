@@ -2,37 +2,17 @@
 
 MIDI_CREATE_DEFAULT_INSTANCE();
 
-/*
-  This example is a modified version of Basic I/O MIDI tutorial
-  by Franky. It tries to demonstrate how to use Arduino MIDI
-  library together with ttyMIDI. You will need to install
-  Arduino MIDI library for this to work:
-  
-  http://www.arduino.cc/playground/Main/MIDILibrary
-  
-  All example patches shipped with the Arduino MIDI library
-  will work with ttyMIDI with same change (if they wont, please
-  report a bug).
-  
-*/
-
 #define LED 13   		// LED pin on Arduino board
+const int knockSensor = A0;	// the piezo is connected to analog pin 0
+const int threshold = 100;  	// threshold value to decide when the detected sound is a knock or not
 
 int sensorReading = 0;      // variable to store the value read from the sensor pin           
-byte val = 0;
 int statePin = LOW;
-
-// these constants won't change:
-const int ledPin = 13;      // led connected to digital pin 13
-const int knockSensor = A0; // the piezo is connected to analog pin 0
-const int threshold = 100;  // threshold value to decide when the detected sound is a knock or not
-
 
 void setup() {
   pinMode(LED, OUTPUT);
   MIDI.begin(4);            	// Launch MIDI with default options
 				// input channel is set to 4
-
 
   
   /* Now the problem is that serial port at the computer is only
@@ -65,14 +45,13 @@ void loop() {
     digitalWrite(LED, statePin);
     
     digitalWrite(LED,HIGH);     // Blink the LED
-    MIDI.sendNoteOn(35,127,10);  // Send a Note (pitch 42, velo 127 on channel 1)
+    MIDI.sendNoteOn(35,127,10);  // Send a drum bass note (pitch 42, velo 127 on channel 1)
     delay(100);
     MIDI.sendNoteOff(35,0,10);   // Stop the note
     digitalWrite(LED,LOW);    	
 
   }
 
-//  delay(100);  // we have to make a delay to avoid overloading the serial port
     
 }
 
