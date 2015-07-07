@@ -45,7 +45,7 @@ void loop() {
     digitalWrite(LED, pinState);
     
     digitalWrite(LED,HIGH);     // Blink the LED
-    MIDI.sendNoteOn(35,127,10);  // Send a drum bass note (pitch 42, velo 127 on channel 10)
+    MIDI.sendNoteOn(35,127,10);  // Send a drum bass note (pitch 35, velo 127 on channel 10)
     delay(100);
     MIDI.sendNoteOff(35,0,10);   // Stop the note
     digitalWrite(LED,LOW);    	
