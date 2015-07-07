@@ -7,7 +7,7 @@ const int knockSensor = A0;	// the piezo is connected to analog pin 0
 const int threshold = 100;  	// threshold value to decide when the detected sound is a knock or not
 
 int sensorReading = 0;      // variable to store the value read from the sensor pin           
-int statePin = LOW;
+int pinState = LOW;
 
 void setup() {
   pinMode(LED, OUTPUT);
@@ -40,12 +40,12 @@ void loop() {
 
   if (sensorReading >= threshold) {
 
-    statePin = !statePin;
+    pinState = !pinState;
 
-    digitalWrite(LED, statePin);
+    digitalWrite(LED, pinState);
     
     digitalWrite(LED,HIGH);     // Blink the LED
-    MIDI.sendNoteOn(35,127,10);  // Send a drum bass note (pitch 42, velo 127 on channel 1)
+    MIDI.sendNoteOn(35,127,10);  // Send a drum bass note (pitch 42, velo 127 on channel 10)
     delay(100);
     MIDI.sendNoteOff(35,0,10);   // Stop the note
     digitalWrite(LED,LOW);    	
